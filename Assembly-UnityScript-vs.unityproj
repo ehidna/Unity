@@ -47,6 +47,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\characterController.js" />
+     <Compile Include="Assets\missile.js" />
+     <Compile Include="Assets\pathFinding.js" />
+     <Compile Include="Assets\spawnEnemy.js" />
+     <Compile Include="Assets\tower.js" />
+     <Compile Include="Assets\yolTakip.js" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-SimpleWater4.shader" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Sources\Shaders\FX-Water.shader" />
