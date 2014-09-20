@@ -40,8 +40,8 @@ function OnTriggerExit(other : Collider){
 	}
 }
 function CalculateAimPosition(targetPos : Vector3){
-	//var aimPoint = targetPos - turretBall.transform.position;
-	var aimPoint = Vector3(targetPos.x - transform.position.x, targetPos.y - transform.position.y , targetPos.z - transform.position.z);
+	var aimPoint = targetPos - turretBall.transform.position;
+	//var aimPoint = Vector3(targetPos.x - transform.position.x, targetPos.y - transform.position.y , targetPos.z - transform.position.z);
 	desiredRotation = Quaternion.LookRotation(aimPoint);
 }
 function CalculateAimError(){
