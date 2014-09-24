@@ -22,11 +22,10 @@ function Update () {
         		n.destination = targets[i].position;
         	}
      	}
-    }
-    deneme();
+    }deneme();
 }
 function deneme(){
-	if(n!=null){
+   if(n!=null){
 		var dist = Vector3.Distance(targets[i].position, n.transform.position);
     	currentTarget = targets[i];
     	//if npc reaches its destination (or gets close)...
@@ -38,4 +37,7 @@ function deneme(){
         	}
     	}
 	}
+
+
+
 }

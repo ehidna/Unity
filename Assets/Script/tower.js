@@ -13,7 +13,8 @@ private var nextFireTime : float;
 private var nextMoveTime : float;
 private var desiredRotation : Quaternion;
 private var aimError : float;
-
+private var dusman : GameObject;
+private var targetScript : Enemy;
 function Start(){
 }
 
@@ -25,6 +26,8 @@ function Update(){
 		}	
 		if(Time.time >= nextFireTime)
 			FireProjectile();
+		if(targetScript.health <= 0)
+			Destroy(dusman);
 	}
 }
 
@@ -32,6 +35,8 @@ function OnTriggerEnter(other : Collider){
 	if(other.gameObject.tag == 'Enemy'){
 		nextFireTime = Time.time+(reloadTime * .5);
 		myTarget = other.gameObject.transform;
+		targetScript = myTarget.GetComponent(Enemy); 
+		dusman = other.gameObject;
 	}
 }
 function OnTriggerExit(other : Collider){
@@ -56,4 +61,5 @@ function FireProjectile(){
 		Instantiate(myProjectile, theMuzzlePos.position, theMuzzlePos.rotation);
 //		Instantiate(muzzleEffect, theMuzzlePos.position, theMuzzlePos.rotation);
 	}
+	targetScript.health -= 1;
 }
